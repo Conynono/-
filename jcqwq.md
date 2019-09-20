@@ -1,6 +1,6 @@
-### jcqwq is cute
+### *jcqwq* is cute
 
-- why
+- **why**
 - because she is soooo beautiful
 - and erudition
 - 6666666
