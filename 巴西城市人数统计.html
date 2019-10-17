@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <title>ZingSoft Demo</title>
+ 
+ 
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+ 
+        #myChart {
+            height: 100%;
+            width: 100%;
+            min-height: 150px;
+        }
+ 
+        .zc-ref {
+            display: none;
+        }
+ 
+        zing-grid[loading] {
+            height: 450px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+    <script>
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+        var myConfig = {
+            "graphset": [{
+                "type": "bar",
+                "background-color": "white",
+                "title": {
+                    "text": "巴西七大城市人口数量",
+                    "font-color": "#7E7E7E",
+                    "backgroundColor": "none",
+                    "font-size": "22px",
+                    "alpha": 1,
+                    "adjust-layout": true,
+                },
+                "plotarea": {
+                    "margin": "dynamic"
+                },
+                "legend": {
+                    "layout": "x3",
+                    "overflow": "page",
+                    "alpha": 0.05,
+                    "shadow": false,
+                    "align": "center",
+                    "adjust-layout": true,
+                    "marker": {
+                        "type": "circle",
+                        "border-color": "none",
+                        "size": "10px"
+                    },
+                    "border-width": 0,
+                    "maxItems": 3,
+                    "toggle-action": "hide",
+                    "pageOn": {
+                        "backgroundColor": "#000",
+                        "size": "10px",
+                        "alpha": 0.65
+                    },
+                    "pageOff": {
+                        "backgroundColor": "#7E7E7E",
+                        "size": "10px",
+                        "alpha": 0.65
+                    },
+                    "pageStatus": {
+                        "color": "black"
+                    }
+                },
+                "plot": {
+                    "bars-space-left": 0.15,
+                    "bars-space-right": 0.15,
+                    "animation": {
+                        "effect": "ANIMATION_SLIDE_BOTTOM",
+                        "sequence": 0,
+                        "speed": 800,
+                        "delay": 800
+                    }
+                },
+                "scale-y": {
+                    "line-color": "#7E7E7E",
+                    "item": {
+                        "font-color": "#7e7e7e"
+                    },
+                    "values": "0:12000000:30000",
+                    "guide": {
+                        "visible": true
+                    },
+                    "label": {
+                        "text": "数量",
+                        "font-family": "arial",
+                        "bold": true,
+                        "font-size": "14px",
+                        "font-color": "#7E7E7E",
+                    },
+                },
+                "scaleX": {
+                    "values": [
+                        "圣保罗",
+                        "里约热内卢",
+                        "萨尔瓦多",
+                        "巴西利亚",
+						"福塔雷萨",
+						"贝洛哈里桑塔",
+						"玛瑙斯"
+                    ],
+                    "placement": "default",
+                    "tick": {
+                        "size": 58,
+                        "placement": "cross"
+                    },
+                    "itemsOverlap": true,
+                    "item": {
+                        "offsetY": -55
+                    }
+                },
+                "scaleX2": {
+                    "values": ["城市"],
+                    "placement": "default",
+                    "tick": {
+                        "size": 20,
+                    },
+                    "item": {
+                        "offsetY": -15
+                    }
+                },
+                "tooltip": {
+                    "visible": false
+                },
+                "crosshair-x": {
+                    "line-width": "100%",
+                    "alpha": 0.18,
+                    "plot-label": {
+                        "header-text": "%kv Sales"
+                    }
+                },
+                "series": [{
+                        "values": [
+                            11253503,
+							6320446,
+							2675656,
+							2570160,
+							2452185,
+							2375151,
+							1802014
+                        ],
+                        "alpha": 0.95,
+                        "borderRadiusTopLeft": 7,
+                        "background-color": "#8993c7",
+                        "text": "城市总人口数",
+                    },
+                    {
+                        "values": [
+                          11133776,
+							6264915,
+							2671290,
+							2564370,
+							2449109,
+							2369063,
+							1798773
+                        ],
+                        "borderRadiusTopLeft": 7,
+                        "alpha": 0.95,
+                        "background-color": "#fdb462",
+                        "text": "巴西本地居民数"
+                    },
+                    {
+                        "values": [
+                            119727,
+							55531,
+							4366,
+							5790,
+							3076,
+							6088,
+							3241
+                        ],
+                        "alpha": 0.95,
+                        "borderRadiusTopLeft": 7,
+                        "background-color": "#8dd3c7",
+                        "text": "非巴西本地居民数"
+                    },
+                    {
+                        "values": [
+                         3576148,2147235,860309,774820,711478,762924,461426
+                        ],
+                        "borderRadiusTopLeft": 7,
+                        "alpha": 0.95,
+                        "background-color": "#fb8072",
+                        "text": "总家庭单位"
+                    },
+                    {
+                        "values": [
+                           3548433,2147235,860090,751558,711478,762924,458959
+                        ],
+                        "borderRadiusTopLeft": 7,
+                        "alpha": 0.95,
+                        "background-color": "#80b1d3",
+                        "text": "城市家庭单位"
+                    },
+                
+                ]
+            }]
+        };
+ 
+        zingchart.render({
+            id: 'myChart',
+            data: myConfig,
+            height: '100%',
+            width: '100%'
+        });
+    </script>
+</body>
+ 
+</html>
